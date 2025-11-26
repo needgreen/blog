@@ -7,7 +7,7 @@ UI/UX 디자인과 프론트엔드 공부 내용을 정리하는 공간입니다
 
 ## Category
 
-### 디자인 / UX
+### Design / UX
 
 - [디자인 시스템](./posts/design-system.md)
 - [UX 케이스 스터디](./posts/ux-case-study-01.md)
