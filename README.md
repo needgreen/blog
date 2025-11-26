@@ -25,7 +25,7 @@ UI/UX 디자인과 프론트엔드 공부 내용을 정리하는 공간입니다
 - [restAPI](./02_Frontend/07_restAPI/01_rest-api.md)
 - [GraphQL](./02_Frontend/08_GraphQL/graphql.md)
 - [TypeScript](./02_Frontend/09_TypeScript/typescript.md)
-- [Next.js]
+- [Next.js](./02_Frontend/10_Next-js/01_next-js.md)
 - [에러/이슈 모음](./frontend/issues/swiper-issue.md)
 
 ---
