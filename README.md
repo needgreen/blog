@@ -1,24 +1,18 @@
-# 🎨 SJ’s Frontend
-
-프론트엔드를 처음부터 끝까지 기록하는 공간입니다.  
+# 🎨 J's Tech & Design Notes
+UI/UX 디자인과 프론트엔드 공부 내용을 정리하는 공간입니다.  
 학습 과정, 메모, 과제, 프로젝트, 정리 노트 등이 모두 Markdown으로 저장됩니다.
+
 
 ---
 
-## 📚 주차별 학습  
-- **1주차** : [Git & Github](./01_git-github/git-github-basics.md)  
-- **1주차** : [HTML](./02_html/html-basics.md)  
-- **2주차** : [CSS](./03_css/css-basics.md)  
-- **3주차** : [JavaScript + Web](./04_javascript/js-basics.md)  
-- **4주차** : 1차 프로젝트  
-- **5주차** : [React 기본](./05_react-core/react-core-concepts.md)  
-- **6주차** : [React Hook / Route](./06_react-hooks-route/hooks.md)  
-- **6주차** : [Redux Toolkit](./07_redux/redux-toolkit-basics.md)  
-- **7주차** : [Firebase](./08_firebase/firebase-auth.md)
-- **8주차** : 2차 프로젝트 
-- **9주차** : [REST API](./09_rest-api/axios-fetch.md)  
-- **9주차** : [GraphQL](./10_graphql/graphql-basics.md)  
-- **9주차** : [TypeScript](./11_typescript/ts-basics.md)
+
+## 📚 카테고리
+### 🎨 디자인 / UX
+- [디자인 시스템](./posts/design-system.md)
+- [UX 케이스 스터디](./posts/ux-case-study-01.md)
+
+### 💻 프론트엔드
+- [프론트엔드 노트](./posts/frontend-note.md)
 
 ---
 
