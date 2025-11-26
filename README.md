@@ -22,12 +22,6 @@
 
 ---
 
-## 🎯 Special / Career  
-- AI 특강  
-- 커리어 코칭  
-- 개발자를 위한 LLM 활용  
-
----
 
 ## 🧩 Projects  
 - [1차 프로젝트](./13_projects/project-01/planning.md)  
