@@ -142,11 +142,12 @@ Shorts는 프로젝트의 핵심 기능인 만큼 사용성·반응성·성능�
 
 - <b>Framer motion 기반의 Swipe/Drag 인터랙션</b>
 
-  모바일 환경에서 자연스러운 콘텐츠 소비를 위해 터치 기반 제스처를 중심으로 인터랙션을 설계했다.
+  CSS 기반 드래그 로직은 관성과 탄성이 부족했고 터치/마우스 이벤트 처리도 복잡했다.
+  Framer Motion의 drag API와 spring 애니메이션을 활용해 물리 기반의 자연스러운 제스처를 구현했다.
 
-  - 이슈 : CSS transition과 직접 구현한 드래그 로직으로는 관성과 탄성이 부족해 부자연스러웠고, 터치/마우스 이벤트 처리 코드가 복잡했다.
+  <br>
 
-  ```
+  ```tsx
   <motion.div
     drag="y"
     dragConstraints={{ top: 0, bottom: 0 }}
@@ -156,11 +157,11 @@ Shorts는 프로젝트의 핵심 기능인 만큼 사용성·반응성·성능�
       else if (info.offset.y < -50) handleNext();
     }}
     animate={{ y: currentIndex * -window.innerHeight }}
-    transition={{ type: "spring", stiffness: 300, damping: 30 }}
+    transition={{ type: 'spring', stiffness: 300, damping: 30 }}
   />
   ```
 
-  Framer Motion의 drag API와 spring 애니메이션을 활용해 물리 기반의 자연스러운 제스처를 구현했다. 선언적 방식으로 코드가 간결해지고 모바일/데스크톱 환경에서 일관된 경험을 제공할 수 있었다.
+  Framer Motion의 선언적 방식 덕분에 모바일과 데스크톱에서 일관된 경험을 제공할 수 있었다.
 
 - <b>반응형 디자인(모바일/데스크톱)</b>
 
@@ -170,7 +171,7 @@ Shorts는 프로젝트의 핵심 기능인 만큼 사용성·반응성·성능�
 
   초기에는 사용자가 스와이프할 때마다 다음 Shorts를 개별적으로 API 호출하는 구조였다. 빠르게 넘길 때 여러 요청이 동시에 발생해 성능이 저하될 수 있다는 점을 인지하여 수정했다.
 
-  ```
+  ```tsx
   // Before: 개별 API 호출
   const loadNextShort = async (currentId: number) => {
     const response = await fetch(`/api/shorts/${currentId + 1}`);
