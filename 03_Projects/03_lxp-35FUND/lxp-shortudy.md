@@ -112,7 +112,7 @@
 
 <br><br>
 
-[!images](./images/2025-12-12-180512.mp4)
+![Shorts Demo](./images/2025-12-12-180512.mp4)
 
 ## 기술적 도전과 해결
 
@@ -126,9 +126,9 @@
   기존 CSR 중심 구조에서 서버 컴포넌트와 클라이언트 컴포넌트의 역할을 다시 정의해야 했다.
   특히 상태 관리와 브라우저 의존 로직을 어디에 둘지에 대한 기준을 세우는 과정이 필요했다.
 
--<b> App Router 구조 설계</b>
+- <b>App Router 구조 설계</b>
 
-라우트 단위로 책임을 명확히 나누고 레이아웃과 페이지를 분리해 확장 가능한 구조를 설계했다. 공통 UI는 layout으로 인터랙션 중심 컴포넌트는 client 영역으로 분리했다.
+  라우트 단위로 책임을 명확히 나누고 레이아웃과 페이지를 분리해 확장 가능한 구조를 설계했다. 공통 UI는 layout으로 인터랙션 중심 컴포넌트는 client 영역으로 분리했다.
 
 - <b>TypeScript 타입 안정성 확보</b>
 
@@ -141,27 +141,27 @@
 
 Shorts는 프로젝트의 핵심 기능인 만큼 사용성·반응성·성능을 동시에 고려해야 했다.
 
--<b> Swipe/Drag 인터랙션</b>
+- <b>Swipe/Drag 인터랙션</b>
 
-모바일 환경에서 자연스러운 콘텐츠 소비를 위해 터치 기반 제스처를 중심으로 인터랙션을 설계했다. 데스크톱 환경에서는 터치 제스처가 제한적이라는 점을 고려해 명시적인 스와이프 버튼을 제공하고, 키보드 입력을 통한 화면 전환도 가능하도록 설계했다.
+  모바일 환경에서 자연스러운 콘텐츠 소비를 위해 터치 기반 제스처를 중심으로 인터랙션을 설계했다. 데스크톱 환경에서는 터치 제스처가 제한적이라는 점을 고려해 명시적인 스와이프 버튼을 제공하고, 키보드 입력을 통한 화면 전환도 가능하도록 설계했다.
 
-- 이슈 : CSS transition과 직접 구현한 드래그 로직으로는 관성과 탄성이 부족해 부자연스러웠고, 터치/마우스 이벤트 처리 코드가 복잡했다.
+  - 이슈 : CSS transition과 직접 구현한 드래그 로직으로는 관성과 탄성이 부족해 부자연스러웠고, 터치/마우스 이벤트 처리 코드가 복잡했다.
 
-```
-<motion.div
-  drag="y"
-  dragConstraints={{ top: 0, bottom: 0 }}
-  dragElastic={0.2}
-  onDragEnd={(event, info) => {
-    if (info.offset.y > 50) handlePrevious();
-    else if (info.offset.y < -50) handleNext();
-  }}
-  animate={{ y: currentIndex * -window.innerHeight }}
-  transition={{ type: "spring", stiffness: 300, damping: 30 }}
-/>
-```
+  ```
+  <motion.div
+    drag="y"
+    dragConstraints={{ top: 0, bottom: 0 }}
+    dragElastic={0.2}
+    onDragEnd={(event, info) => {
+      if (info.offset.y > 50) handlePrevious();
+      else if (info.offset.y < -50) handleNext();
+    }}
+    animate={{ y: currentIndex * -window.innerHeight }}
+    transition={{ type: "spring", stiffness: 300, damping: 30 }}
+  />
+  ```
 
-Framer Motion의 drag API와 spring 애니메이션을 활용해 물리 기반의 자연스러운 제스처를 구현했다. 선언적 방식으로 코드가 간결해지고 모바일/데스크톱 환경에서 일관된 경험을 제공할 수 있었다.
+  Framer Motion의 drag API와 spring 애니메이션을 활용해 물리 기반의 자연스러운 제스처를 구현했다. 선언적 방식으로 코드가 간결해지고 모바일/데스크톱 환경에서 일관된 경험을 제공할 수 있었다.
 
 - <b>반응형 디자인(모바일/데스크톱)</b>
 
