@@ -132,7 +132,7 @@
 
 <br>
 
-![shorts video](https://github.com/user-attachments/assets/c616f14e-2a4a-4d14-896a-8463b74b1506)
+![shorts video](./images/shortudy_project.webp)
 
 <br><br>
 
