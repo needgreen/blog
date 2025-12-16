@@ -25,15 +25,15 @@ UI/UX 디자인과 프론트엔드 공부 내용을 정리하는 공간입니다
 - [restAPI](./02_Frontend/07_restAPI/01_rest-api.md)
 - [GraphQL](./02_Frontend/08_GraphQL/graphql.md)
 - [TypeScript](./02_Frontend/09_TypeScript/typescript.md)
-- [Next.js](./02_Frontend/10_Next-js/01_next-js.md)
+- [Next.js](./02_Frontend/10_Next-js/01_nextjs.md)
 - [에러/이슈 모음](./frontend/issues/swiper-issue.md)
 
 ---
 
 ### Projects
 
-- [1차 프로젝트](./projects/project-01/planning.md)
-- [2차 프로젝트](./projects/project-01/planning.md)
+- [1차 프로젝트](./03_Projects/01_lxp-killpo/lxp-project.md)
+- [2차 프로젝트](./03_Projects/02_lxp-welearn/welearn-first.md)
 
 ---
 
