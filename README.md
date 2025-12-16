@@ -32,8 +32,9 @@ UI/UX 디자인과 프론트엔드 공부 내용을 정리하는 공간입니다
 
 ### Projects
 
-- [1차 프로젝트](./03_Projects/01_lxp-killpo/lxp-project.md)
-- [2차 프로젝트](./03_Projects/02_lxp-welearn/welearn-first.md)
+- [1차 LXP 프로젝트 - Vanilla JavaScript](./03_Projects/01_lxp-killpo/lxp-project.md)
+- [2차 LXP 프로젝트 - React, Firebase](./03_Projects/02_lxp-welearn/welearn-first.md)
+- [3차 LXP 프로젝트 - TypeScript, Next.js](./03_Projects/03_lxp-35FUND/lxp-shortudy.md)
 
 ---
 
