@@ -67,7 +67,7 @@
 
   <br>
 
-  왜 롱폼이 아닌 숏폼인가?
+  <b>왜 롱폼이 아닌 숏폼인가?</b>
   | 구분 | 프론트엔드 관점 | 백엔드 관점 |
   | -------- | ----------------- | --------------------- |
   | 숏폼 학습 깊이 | 얕고 휘발적인 지식 | 깊이보다 진입 장벽을 낮추는 것이 중요 |
@@ -132,12 +132,7 @@
 
 <br>
 
-<video src="./images/2025-12-12-180512.mp4" 
-       controls
-       autoplay
-       loop
-       muted
-       width="100%"></video>
+![shorts video](https://github.com/user-attachments/assets/c616f14e-2a4a-4d14-896a-8463b74b1506)
 
 <br><br>
 
