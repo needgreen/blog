@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shortudy Pitch Deck</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #000;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+
+        .slide-container {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* IE and Edge */
+        }
+
+        .slide-container::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Opera */
+        }
+
+        .slide {
+            min-width: 100vw;
+            height: 100vh;
+            scroll-snap-align: start;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 80px;
+            position: relative;
+        }
+
+        .slide-number {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            color: #00ff66;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: 72px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 56px;
+            font-weight: bold;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 32px;
+            color: #00ff66;
+            margin-bottom: 20px;
+        }
+
+        .accent {
+            color: #00ff66;
+        }
+
+        .subtitle {
+            font-size: 28px;
+            color: #aaa;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .content {
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .bullet-list {
+            font-size: 24px;
+            line-height: 2;
+            list-style: none;
+            margin: 30px 0;
+        }
+
+        .bullet-list li {
+            margin: 20px 0;
+            padding-left: 40px;
+            position: relative;
+        }
+
+        .bullet-list li:before {
+            content: "▸";
+            color: #00ff66;
+            font-size: 32px;
+            position: absolute;
+            left: 0;
+        }
+
+        .diagram-placeholder {
+            width: 100%;
+            height: 500px;
+            border: 3px dashed #00ff66;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #00ff66;
+            margin: 40px 0;
+            border-radius: 10px;
+            flex-direction: column;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin: 40px 0;
+        }
+
+        .three-column {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin: 40px 0;
+        }
+
+        .box {
+            background: #111;
+            border: 2px solid #00ff66;
+            padding: 40px;
+            border-radius: 10px;
+        }
+
+        .box h3 {
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        .box p {
+            font-size: 20px;
+            line-height: 1.8;
+        }
+
+        .team-info {
+            margin-top: 80px;
+            font-size: 20px;
+            color: #888;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 120px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .nav-buttons {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .nav-btn {
+            background: rgba(0, 255, 102, 0.8);
+            color: #000;
+            border: none;
+            padding: 8px 16px;
+            font-size: 12px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-btn:hover {
+            background: rgba(0, 204, 82, 0.9);
+            transform: scale(1.05);
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #00ff66 0%, #00cc52 100%);
+            color: #000;
+            padding: 30px 50px;
+            border-radius: 15px;
+            font-size: 32px;
+            font-weight: bold;
+            margin: 30px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container" id="slideContainer">
+        <!-- Slide 1: Title -->
+        <div class="slide">
+            <div class="slide-number">1 / 14</div>
+            <div class="logo">
+                shor<span class="accent">T</span>udy
+            </div>
+            <div class="subtitle">shor<span class="accent">T</span> + s<span class="accent">T</span>udy, <span class="accent">T</span>hinking</div>
+            <div class="highlight-box">
+                IT 숏폼 학습 플랫폼
+            </div>
+            <div class="team-info">
+                <strong>Team Members</strong><br>
+                [FE] 정승일, 이서정, 장권영<br>
+                [BE] 지민수, 김성균, 이승훈, 정재웅, 정호준<br><br>
+                Presentation Date: 2025.12.15
+            </div>
+        </div>
+
+        <!-- Slide 2: What's the LXP? -->
+        <div class="slide">
+            <div class="slide-number">2 / 13</div>
+            <h2>What is <span class="accent">LXP</span>, and Why <span class="accent">Short-form</span>?</h2>
+            
+            <div class="content">
+                <div style="text-align: center; margin: 80px 0;">
+                    <p style="font-size: 36px; line-height: 2; font-style: italic; color: #00ff66;">
+                        "학습자들 스스로 탐색·발견·추천을 통해 배우게 만들자"<br>
+                        <span style="font-size: 28px; color: #888;">- Josh Bersin</span>
+                    </p>
+                </div>
+
+                <div style="font-size: 40px; font-weight: bold; text-align: center; margin: 80px 0; color: #00ff66;">
+                    Learning Experience = Access × Completion × Memory
+                </div>
+
+                <div class="three-column" style="margin-top: 60px;">
+                    <div class="box" style="border-color: #00ff66;">
+                        <h3 style="font-size: 28px;">Access</h3>
+                        <p style="font-size: 28px; line-height: 2; margin-top: 30px;">
+                            원하는 곳으로<br>
+                            쉽게 접근할 수 있는가?
+                        </p>
+                    </div>
+                    <div class="box" style="border-color: #00ff66;">
+                        <h3 style="font-size: 28px;">Completion</h3>
+                        <p style="font-size: 28px; line-height: 2; margin-top: 30px;">
+                            끝까지<br>
+                            볼 수 있는가?
+                        </p>
+                    </div>
+                    <div class="box" style="border-color: #00ff66;">
+                        <h3 style="font-size: 28px;">Memory</h3>
+                        <p style="font-size: 28px; line-height: 2; margin-top: 30px;">
+                            찾아본 내용을<br>
+                            기억할 수 있는가?
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Our Answer -->
+        <div class="slide">
+            <div class="slide-number">3 / 13</div>
+            <h2>So, We Built <span class="accent">shorTudy</span></h2>
+            
+            <div class="content">
+                <div class="two-column" style="margin-top: 40px; gap: 60px;">
+                    <div class="box" style="border-color: #00ff66; padding: 50px 40px; text-align: center; height: 100%; display: flex; flex-direction: column; justify-content: center;">
+                        <div style="font-size: 80px; margin-bottom: 30px;">🔍</div>
+                        <h3 style="font-size: 36px; color: #fff; margin-bottom: 20px;">Keyword Search</h3>
+                        <p style="font-size: 22px; line-height: 1.6; color: #ccc;">
+                            원하는 키워드를 입력하면<br>
+                            <span class="accent">가장 정확한 영상</span>으로<br>
+                            바로 이동합니다.
+                        </p>
+                        <p style="margin-top: 20px; color: #888; font-size: 18px;">(Direct Access)</p>
+                    </div>
+
+                    <div class="box" style="border-color: #00ff66; padding: 50px 40px; text-align: center; height: 100%; display: flex; flex-direction: column; justify-content: center;">
+                        <div style="font-size: 80px; margin-bottom: 30px;">🔗</div>
+                        <h3 style="font-size: 36px; color: #fff; margin-bottom: 20px;">Knowledge Chain</h3>
+                        <p style="font-size: 22px; line-height: 1.6; color: #ccc;">
+                            영상 하나를 선택하면<br>
+                            <span class="accent">연관된 N개의 영상</span>이 정렬되어<br>
+                            학습이 꼬리를 물고 이어집니다.
+                        </p>
+                        <p style="margin-top: 20px; color: #888; font-size: 18px;">(Extension of Learning)</p>
+                    </div>
+                </div>
+
+                <div class="highlight-box" style="margin-top: 60px; font-size: 28px; padding: 20px;">
+                    "원하는 걸 찾고(Search), 지식을 확장한다(Chain)"
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: As-Is vs To-Be -->
+        <div class="slide">
+            <div class="slide-number">4 / 13</div>
+            <h2><span class="accent">As-Is</span> vs <span class="accent">To-Be</span></h2>
+            
+            <div class="two-column" style="margin-top: 60px;">
+                <div class="box">
+                    <h3 style="color: #aaa;">🏛️ As-Is (도서관)</h3>
+                    <p style="font-size: 22px; line-height: 2.5; margin-top: 20px;">
+                        • 마음 먹고 가야 하는 곳<br>
+                        • 대학 강의 플랫폼 LMS<br>
+                        • 유데미, 인프런 등 MOOC
+                    </p>
+                </div>
+                <div class="box" style="border-color: #00ff66; background: #001a0d;">
+                    <h3>📚 To-Be (WIKI)</h3>
+                    <p style="font-size: 22px; line-height: 2.5; margin-top: 20px;">
+                        • 누구나 신속하게 접근 가능<br>
+                        • 짧지만 정확하게<br>
+                        • shor<span class="accent" style="font-weight: bold;">T</span>udy
+                    </p>
+                </div>
+            </div>
+
+            <div class="content" style="margin-top: 60px;">
+                <h3 style="text-align: center;">우리의 역할</h3>
+                <div class="highlight-box" style="margin-top: 30px; font-size: 26px;">
+                    유저가 학습을 '숙제'로 느끼지 않게 하는<br>
+                    <span style="font-size: 32px; font-weight: bold;">Pace Maker</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Pain Points & Weakness -->
+        <div class="slide">
+            <div class="slide-number">5 / 13</div>
+            <h2>Pain Points & <span class="accent">Weakness</span></h2>
+            
+            <div class="content">
+                <div style="margin: 40px 0;">
+                    <div class="box" style="border-color: #ffa500; margin-bottom: 30px;">
+                        <h3 style="color: #ffa500;">⚠️ [약점 1] 학습 깊이의 한계</h3>
+                        <p style="font-size: 22px; line-height: 2; margin-top: 20px;">
+                            Lack of Depth<br>
+                            숏폼은 짧기 때문에 깊이 있는 학습이 어렵다
+                        </p>
+                    </div>
+
+                    <div class="box" style="border-color: #ffa500; margin-bottom: 30px;">
+                        <h3 style="color: #ffa500;">⚠️ [약점 2] 휘발성 지식</h3>
+                        <p style="font-size: 22px; line-height: 2; margin-top: 20px;">
+                            Retention Issue<br>
+                            빠르게 소비되고 쉽게 잊혀진다
+                        </p>
+                    </div>
+
+                    <div class="box" style="border-color: #ffa500; margin-bottom: 30px;">
+                        <h3 style="color: #ffa500;">⚠️ [약점 3] 체계적인 커리큘럼 부재</h3>
+                        <p style="font-size: 22px; line-height: 2; margin-top: 20px;">
+                            Fragmented Learning<br>
+                            파편화된 지식, 연결성 부족
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Future Strategies -->
+        <div class="slide">
+            <div class="slide-number">6 / 13</div>
+            <h2>Future Strategies: <span class="accent">Overcoming Limitations</span></h2>
+            <div class="subtitle">한계 극복 전략</div>
+            
+            <div class="three-column">
+                <div class="box" style="border-color: #00ff66;">
+                    <h3 style="text-align: center; font-size: 24px;">1️⃣ Learning Roadmap</h3>
+                    <div style="margin-top: 30px; font-size: 18px; line-height: 2;">
+                        <p style="color: #ffa500; font-weight: bold;">문제</p>
+                        <p style="margin-bottom: 20px;">파편화된 학습</p>
+                        
+                        <p style="color: #00ff66; font-weight: bold;">해결</p>
+                        <p style="margin-bottom: 20px;">연관 숏폼을<br>코스로 묶음</p>
+                        
+                        <p style="color: #fff; font-weight: bold;">핵심</p>
+                        <p>체계적 연속 학습<br>(Dot to Line)</p>
+                    </div>
+                </div>
+
+                <div class="box" style="border-color: #00ff66;">
+                    <h3 style="text-align: center; font-size: 24px;">2️⃣ Recommendation</h3>
+                    <div style="margin-top: 30px; font-size: 18px; line-height: 2;">
+                        <p style="color: #ffa500; font-weight: bold;">문제</p>
+                        <p style="margin-bottom: 20px;">단순 최신순 나열</p>
+                        
+                        <p style="color: #00ff66; font-weight: bold;">해결</p>
+                        <p style="margin-bottom: 20px;">태그 기반<br>추천 로직</p>
+                        
+                        <p style="color: #fff; font-weight: bold;">핵심</p>
+                        <p>맞춤형 콘텐츠<br>체류 시간 증대</p>
+                    </div>
+                </div>
+
+                <div class="box" style="border-color: #00ff66;">
+                    <h3 style="text-align: center; font-size: 24px;">3️⃣ Scrap Feature</h3>
+                    <div style="margin-top: 30px; font-size: 18px; line-height: 2;">
+                        <p style="color: #ffa500; font-weight: bold;">문제</p>
+                        <p style="margin-bottom: 20px;">휘발성 지식</p>
+                        
+                        <p style="color: #00ff66; font-weight: bold;">해결</p>
+                        <p style="margin-bottom: 20px;">다시 보고 싶은<br>영상 스크랩</p>
+                        
+                        <p style="color: #fff; font-weight: bold;">핵심</p>
+                        <p>자신의 공간에서<br>반복 학습 가능</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Backend Story 1 -->
+        <div class="slide">
+            <div class="slide-number">7 / 13</div>
+            <h2><span class="accent">Backend</span> Story 1</h2>
+            <div class="subtitle">로그인 UX 개선: 동료의 피드백으로 RTT를 줄이다</div>
+            
+            <div class="content">
+                <div class="box" style="border-color: #ffa500; margin-bottom: 40px;">
+                    <h3 style="color: #ffa500;">⚠️ 협업 상황 및 문제</h3>
+                    <p style="font-size: 20px; line-height: 2; margin-top: 20px;">
+                        프론트엔드 개발자로부터 피드백:<br>
+                        <span class="accent">"로그인 후 프로필 화면을 띄우려면, 토큰을 받고 나서 유저 정보를 또 요청해야 해서 화면 로딩이 길어지게 돼요."</span>
+                    </p>
+                    <p style="font-size: 20px; line-height: 2; margin-top: 20px;">
+                        백엔드 로직은 문제없었지만, <span style="color: #ff6666;">UX 관점에서 '택배를 두 번 기다려야 하는' 비효율</span>이 발생
+                    </p>
+                </div>
+
+                <div class="box" style="border-color: #00ff66; background: #001a0d;">
+                    <h3>✅ 소통을 통한 해결</h3>
+                    <p style="font-size: 20px; line-height: 2; margin-top: 20px;">
+                        구조 변경: 로그인 응답에 <span class="accent">'토큰' + '유저 기본 정보(UserInfo)'를 패키징</span>하여 한 번에 전달
+                    </p>
+                    <p style="font-size: 20px; line-height: 2; margin-top: 20px;">
+                        결과: <span class="accent">서버 왕복 횟수(RTT) 1회로 단축</span> → 로딩 지연 없는 화면 처리 가능
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: Backend Story 2 -->
+        <div class="slide">
+            <div class="slide-number">8 / 13</div>
+            <h2><span class="accent">Backend</span> Story 2</h2>
+            <div class="subtitle">로그아웃 신뢰성 강화: 함께 정의한 보안 프로세스</div>
+            
+            <div class="content">
+                <div class="box" style="border-color: #ffa500; margin-bottom: 40px;">
+                    <h3 style="color: #ffa500;">⚠️ 협업 상황 및 문제</h3>
+                    <p style="font-size: 20px; line-height: 2; margin-top: 20px;">
+                        초기 제안: <span style="color: #888;">"클라이언트에서 토큰만 지우면 되지 않나요?"</span>
+                    </p>
+                    <p style="font-size: 20px; line-height: 2; margin-top: 20px;">
+                        엣지 케이스 발견: <span style="color: #ff6666;">"임의의 사용자가 API만 강제로 호출하면, 서버는 그대로 허용?"</span><br>
+                        → "방 키(Token) 없는 손님의 체크아웃 요청을 무조건 승인하는 보안 허점"
+                    </p>
+                </div>
+
+                <div class="box" style="border-color: #00ff66; background: #001a0d;">
+                    <h3>✅ 소통을 통한 해결</h3>
+                    <p style="font-size: 20px; line-height: 2; margin-top: 20px;">
+                        합의: <span class="accent">"검증된 요청만 로그아웃을 수행한다"</span>
+                    </p>
+                    <p style="font-size: 20px; line-height: 2; margin-top: 20px;">
+                        구현:<br>
+                        • 백엔드: 헤더의 Access Token 유효성 검증 절차 추가<br>
+                        • 프론트엔드: 로그아웃 요청 시 반드시 유효한 토큰 첨부
+                    </p>
+                    <p style="font-size: 20px; line-height: 2; margin-top: 20px;">
+                        결과: <span class="accent">보안성과 신뢰성이 보장되는 로그아웃 프로세스 완성</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: Frontend UX -->
+        <div class="slide">
+            <div class="slide-number">9 / 13</div>
+            <h2><span class="accent">FRONTEND</span>: Logic & Design</h2>
+            <div class="subtitle">사용자 경험 중심의 최적화 전략</div>
+            
+            <div class="content">
+                <div style="font-size: 20px; line-height: 2;">
+                    <h3>성능 최적화</h3>
+                    <ul class="bullet-list" style="font-size: 20px;">
+                        <li><span class="accent">Optimistic Update</span> → 즉시 반영하여 속도감 향상</li>
+                        <li><span class="accent">Next.js 폰트 시스템</span> → CDN 불러오기 대신 Next.js 활용</li>
+                        <li><span class="accent">Next.js Image</span> → 컴포넌트 적극 활용</li>
+                    </ul>
+
+                    <h3 style="margin-top: 50px;">디자인 원칙</h3>
+                    <ul class="bullet-list" style="font-size: 18px;">
+                        <li>UI는 설명이 아니라 즉각적인 이해 제공</li>
+                        <li>모든 인터랙션은 최소 행동, 최소 인지</li>
+                        <li>모든 행동에 즉각적이고 명확한 반응</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 10: Demo Page -->
+        <div class="slide">
+            <div class="slide-number">10 / 13</div>
+            <h2>shor<span class="accent">T</span>udy in Action</h2>
+            
+            <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+                <div style="font-size: 72px; color: #00ff66; text-align: center;">
+                    🎬<br><br>
+                    <span style="font-size: 48px;">DEMO</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 11: Cooperation -->
+        <div class="slide">
+            <div class="slide-number">11 / 13</div>
+            <h2><span class="accent">Cooperation</span></h2>
+            <div class="subtitle">협업의 어려움과 과제</div>
+            
+            <div class="content">
+                <h3 style="color: #ffa500;">⚠️ 주요 갈등 상황</h3>
+                <ul class="bullet-list" style="font-size: 22px;">
+                    <li><span style="color: #ffa500;">LXP에 대한 정의가 서로 달랐습니다</span><br>
+                        → 기획의 충돌</li>
+                    <li><span style="color: #ffa500;">API 문서(Swagger)와 실제 코드가 달랐습니다</span><br>
+                        → 개발의 충돌</li>
+                    <li><span style="color: #ffa500;">8명의 주니어 개발자</span><br>
+                        → 소통의 비용</li>
+                </ul>
+
+                <div class="box" style="margin-top: 60px; border-color: #888;">
+                    <h3 style="color: #aaa;">💭 당시 상황</h3>
+                    <p style="font-size: 22px; line-height: 2.5;">
+                        • "우리가 만드는 게 뭐지?"<br>
+                        • "이 API는 이렇게 동작할 거야" (각자 다른 상상)<br>
+                        • 문서와 구현의 불일치<br>
+                        • 끝없는 커뮤니케이션 비용
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 12: Solution & Future -->
+        <div class="slide">
+            <div class="slide-number">12 / 13</div>
+            <h2>From Guessing to <span class="accent">Contracting</span></h2>
+            <div class="subtitle">해결과 비전</div>
+            
+            <div class="content">
+                <h3 style="color: #00ff66;">✅ 해결 방법</h3>
+                <div class="box" style="border-color: #00ff66; background: #001a0d; margin: 30px 0;">
+                    <p style="font-size: 24px; line-height: 2;">
+                        <span class="accent" style="font-size: 28px; font-weight: bold;">지속적인 소통을 통해 해결</span>
+                    </p>
+                    <p style="font-size: 20px; line-height: 2; margin-top: 20px;">
+                        • API 명세서 우선 작성 → 코드는 그 다음<br>
+                        • 문서를 '계약서'처럼 여기며 개발<br>
+                        • 정기적인 커뮤니케이션으로 지속적인 정렬
+                    </p>
+                </div>
+
+                <h3 style="color: #00ff66; margin-top: 60px;">🚀 Future</h3>
+                <ul class="bullet-list" style="font-size: 22px;">
+                    <li><span class="accent">Deep Code Review</span><br>
+                        → 단순한 "LGTM"을 넘어, 비즈니스 로직에 대해 치열하게 토론하고 질문하는 문화 정착</li>
+                    <li><span class="accent">Regular Retrospective (KPT)</span><br>
+                        → 2주 단위 스프린트 회고를 통해 협업 프로세스를 계속 튜닝</li>
+                    <li><span class="accent">Cross-Domain Workshop</span><br>
+                        → 백엔드 개발자도 React의 라이프사이클을 이해하고, 프론트엔드도 DB 트랜잭션을 이해</li>
+                </ul>
+
+                <div class="highlight-box" style="margin-top: 50px; font-size: 24px;">
+                    "치열한 소통을 통해 팀이 되어가고 있습니다"
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 13: Outro -->
+        <div class="slide">
+            <div class="slide-number">13 / 13</div>
+            <div class="logo">
+                shor<span class="accent">T</span>udy
+            </div>
+            <div style="font-size: 120px; margin: 60px 0; font-weight: bold; color: #00ff66;">
+                T<span style="color: #fff;">hx</span>
+            </div>
+            <div class="highlight-box" style="font-size: 32px; color: #000;">
+                Thank you for your attention!
+            </div>
+            <div style="margin-top: 80px; font-size: 28px; color: #888;">
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="nav-buttons">
+        <button class="nav-btn" onclick="previousSlide()">◀ Previous</button>
+        <button class="nav-btn" onclick="nextSlide()">Next ▶</button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const totalSlides = 13;
+
+        function nextSlide() {
+            if (currentSlide < totalSlides - 1) {
+                currentSlide++;
+                document.getElementById('slideContainer').scrollTo({
+                    left: currentSlide * window.innerWidth,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        function previousSlide() {
+            if (currentSlide > 0) {
+                currentSlide--;
+                document.getElementById('slideContainer').scrollTo({
+                    left: currentSlide * window.innerWidth,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowRight') nextSlide();
+            if (e.key === 'ArrowLeft') previousSlide();
+        });
+
+        document.getElementById('slideContainer').addEventListener('scroll', function(e) {
+            currentSlide = Math.round(e.target.scrollLeft / window.innerWidth);
+        });
+    </script>
+</body>
+</html>
