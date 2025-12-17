@@ -1,4 +1,4 @@
-# J's Tech & Design Notes
+# SJ's Tech & Design Notes
 
 UI/UX 디자인과 프론트엔드 공부 내용을 정리하는 공간입니다.  
 학습 과정, 메모, 과제, 프로젝트, 정리 노트 등이 모두 Markdown으로 저장됩니다.
@@ -9,12 +9,15 @@ UI/UX 디자인과 프론트엔드 공부 내용을 정리하는 공간입니다
 
 ### Design / UX
 
-- [디자인 시스템](./posts/design-system.md)
-- [UX 케이스 스터디](./posts/ux-case-study-01.md)
+- [디자인 시스템]
+- [UX 케이스 스터디]
+
+<br>
 
 ### Frontend
 
-주차별 학습정리
+프론트엔드 기술을 공부하고 내용을 정리합니다. <br>
+프로그래밍 언어, 프레임워크, CS, 도구 등 학습한 기술 내용을 주제별로 정리한 학습 기록입니다.
 
 - [Git & GitHub](./02_Frontend/01_Git-Github/git-github.md)
 - [HTML](./02_Frontend/02_HTML/html.md)
@@ -26,18 +29,31 @@ UI/UX 디자인과 프론트엔드 공부 내용을 정리하는 공간입니다
 - [GraphQL](./02_Frontend/08_GraphQL/graphql.md)
 - [TypeScript](./02_Frontend/09_TypeScript/typescript.md)
 - [Next.js](./02_Frontend/10_Next-js/01_nextjs.md)
-- [에러/이슈 모음](./frontend/issues/swiper-issue.md)
+- [에러/이슈 모음]
 
----
+<br>
 
-### Projects
+### Learning Journey
 
-- [1차 LXP 프로젝트 - Vanilla JavaScript](./03_Projects/01_lxp-killpo/lxp-project.md)
-- [2차 LXP 프로젝트 - React, Firebase](./03_Projects/02_lxp-welearn/welearn-first.md)
-- [3차 LXP 프로젝트 - TypeScript, Next.js](./03_Projects/03_lxp-35FUND/lxp-shortudy.md)
+새로운 개념을 익히고 트러블슈팅을 경험하며 스스로 돌아보는 과정을 남깁니다. <br>
+완벽한 답 보다는 배움의 흔적을 쌓아가며 그 과정 속에서 성장하는 것이 목표입니다.
 
----
+- [CS - 브라우저 렌더링 과정에 대해](./03_StudyLog/01_cs-browser-rendering/cs-browser-rendering.md)
+- [Git - Git 브랜치 전략](./03_StudyLog/02_git-branch-strategy/git-branch-strategy.md)
+- [JavaScript - 원시값과 객체의 비교](./03_StudyLog/03_js-primitive-vs-object/js-primitive-vs-object.md)
+- [JavaScript - 자바스크립트 함수](./03_StudyLog/04_js-function-basics/js-function-basics.md)
+- [JavaScript - 스코프와 전역 변수](./03_StudyLog/05_js-scope-and-global/js-scope-and-global.md)
+- [JavaScript - 이미지 데이터(Base64) 변환](./03_StudyLog/06_js-image-base64/js-image-base64.md)
 
-### About
+<br>
 
-공부한 내용들을 정리하며 성장 과정을 기록합니다.
+## Projects
+
+학습 과정에서 이론을 실제로 적용하며 문제를 해결한 프로젝트들입니다.
+각 프로젝트는 기술 습득뿐 아니라 UX 관점에서의 고민과 프론트엔드 설계 경험을 중심으로 진행했습니다.
+
+- [포텐업 LXP 프로젝트 - 1차 Vanilla JavaScript](./03_Projects/01_lxp-killpo/lxp-project.md)
+- [포텐업 LXP 프로젝트 - 2차 React, Firebase](./03_Projects/02_lxp-welearn/welearn-first.md)
+- [포텐업 LXP 프로젝트 - 3차 TypeScript, Next.js](./03_Projects/03_lxp-35FUND/lxp-shortudy.md)
+
+## <br>
