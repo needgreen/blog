@@ -180,10 +180,11 @@ Shorts는 프로젝트의 핵심 기능인 만큼 사용성·반응성·성능�
 
   ```tsx
   <motion.div
-    drag="y"
-    dragConstraints={{ top: 0, bottom: 0 }}
-    dragElastic={0.2}
+    drag="y" // 세로 방향 드래그 활성화
+    dragConstraints={{ top: 0, bottom: 0 }} // 드래그 범위 제한
+    dragElastic={0.2} // 탄성 효과 (0-1)
     onDragEnd={(event, info) => {
+      // 드래그 종료 시 이동 거리에 따라 콘텐츠 전환
       if (info.offset.y > 50) handlePrevious();
       else if (info.offset.y < -50) handleNext();
     }}
