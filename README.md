@@ -54,6 +54,6 @@ UI/UX 디자인과 프론트엔드 공부 내용을 정리하는 공간입니다
 
 - [포텐업 LXP 프로젝트 - 1차 Vanilla JavaScript](./03_Projects/01_lxp-killpo/lxp-project.md)
 - [포텐업 LXP 프로젝트 - 2차 React, Firebase](./03_Projects/02_lxp-welearn/welearn-first.md)
-- [포텐업 LXP 프로젝트 - 3차 TypeScript, Next.js](./03_Projects/03_lxp-35FUND/lxp-shortudy.md)
+- [포텐업 LXP 프로젝트 - 3차 TypeScript, Next.js](./04_Projects/03_lxp-35FUND/lxp-shortudy.md)
 
 ## <br>
