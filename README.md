@@ -44,6 +44,8 @@ UI/UX 디자인과 프론트엔드 공부 내용을 정리하는 공간입니다
 - [JavaScript - 자바스크립트 함수](./03_StudyLog/04_js-function-basics/js-function-basics.md)
 - [JavaScript - 스코프와 전역 변수](./03_StudyLog/05_js-scope-and-global/js-scope-and-global.md)
 - [JavaScript - 이미지 데이터(Base64) 변환](./03_StudyLog/06_js-image-base64/js-image-base64.md)
+- [React - 핵심개념 정리](./03_StudyLog/07_react-core/react-core.md)
+- [Redux, Firebase - 상태관리와 데이터베이스](./03_StudyLog/08_redux-firebase/redux-firebase.md)
 
 <br>
 
