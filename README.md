@@ -24,7 +24,7 @@ UI/UX 디자인과 프론트엔드 공부 내용을 정리하는 공간입니다
 - [CSS](./02_Frontend/03_CSS/css.md)
 - [JavaScript](./02_Frontend/04_JavaScript/01_javascript.md)
 - [React](./02_Frontend/05_React/01_react.md)
-- [Firebase](./02_Frontend/06_Firebase/firebase.md)
+- [Firebase]
 - [restAPI](./02_Frontend/07_restAPI/01_rest-api.md)
 - [GraphQL](./02_Frontend/08_GraphQL/graphql.md)
 - [TypeScript](./02_Frontend/09_TypeScript/typescript.md)
