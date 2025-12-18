@@ -61,6 +61,6 @@ UI/UX 디자인과 프론트엔드 공부 내용을 정리하는 공간입니다
   → React 컴포넌트 구조와 상태 관리 개념을 적용하고, Firebase를 활용해 인증과 데이터 흐름을 경험한 프로젝트
 
 - [포텐업 LXP 프로젝트 - 3차 TypeScript, Next.js](./04_Projects/03_lxp-35FUND/lxp-shortudy.md)  
-  → TypeScript 기반으로 타입 안정성을 확보하고, Next.js를 통해 페이지 구조와 렌더링 방식을 이해한 프로젝트
+  → 2차 React 프로젝트를 TypeScript와 Next.js로 마이그레이션하며, 백엔드와의 연동을 통해 프론트엔드와 서버 간 데이터 흐름을 종합적으로 경험한 프로젝트
 
 ## <br>
