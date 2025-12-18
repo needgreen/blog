@@ -51,16 +51,16 @@ UI/UX 디자인과 프론트엔드 공부 내용을 정리하는 공간입니다
 
 ## Projects
 
-학습 과정에서 이론을 실제로 적용하며 문제를 해결한 프로젝트들입니다.
+학습 과정에서 이론을 실제로 적용하며 문제를 해결한 프로젝트들입니다. <br>
 각 프로젝트는 기술 습득뿐 아니라 UX 관점에서의 고민과 프론트엔드 설계 경험을 중심으로 진행했습니다.
 
 - [포텐업 LXP 프로젝트 - 1차 Vanilla JavaScript](./04_Projects/01_lxp-killpo/lxp-project.md)  
-  → 라이브러리 없이 순수 JavaScript로 UI를 구현하며 DOM 조작과 이벤트 흐름의 기본을 학습한 프로젝트
+  → 순수 JavaScript로 UI를 구현하며 DOM 조작과 이벤트 기반 인터랙션의 흐름을 이해한 프로젝트
 
 - [포텐업 LXP 프로젝트 - 2차 React, Firebase](./04_Projects/02_lxp-welearn/lxp-welearn.md)  
-  → React 컴포넌트 구조와 상태 관리 개념을 적용하고, Firebase를 활용해 인증과 데이터 흐름을 경험한 프로젝트
+  → React 컴포넌트 구조와 상태 관리를 기반으로 Firebase를 연동해 사용자 인증과 데이터 흐름을 구현한 프로젝트
 
 - [포텐업 LXP 프로젝트 - 3차 TypeScript, Next.js](./04_Projects/03_lxp-35FUND/lxp-shortudy.md)  
-  → 2차 React 프로젝트를 TypeScript와 Next.js로 마이그레이션하며, 백엔드와의 연동을 통해 프론트엔드와 서버 간 데이터 흐름을 종합적으로 경험한 프로젝트
+  → 2차 React 프로젝트를 TypeScript·Next.js로 마이그레이션하며 백엔드 연동까지 확장한 프로젝트
 
 ## <br>
