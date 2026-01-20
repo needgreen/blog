@@ -1,0 +1,968 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Shortudy 2.0 기술 발표</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reset.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/black.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css"
+    />
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+    />
+
+    <style>
+      :root {
+        --accent: #00ff66;
+        --accent-fe: #61dafb;
+        --bg-dark: #0a0a0a;
+      }
+
+      body {
+        background-color: var(--bg-dark);
+      }
+
+      .reveal {
+        font-family: "Pretendard", sans-serif;
+        font-size: 32px;
+      }
+
+      .reveal h1,
+      .reveal h2,
+      .reveal h3 {
+        font-weight: 700;
+        text-transform: none;
+        word-break: keep-all;
+        margin-bottom: 1.5rem;
+      }
+
+      .reveal h2 {
+        font-size: 2.2em;
+      }
+      .reveal h3 {
+        font-size: 1.5em;
+      }
+
+      .text-accent {
+        color: var(--accent) !important;
+      }
+      .text-accent-fe {
+        color: var(--accent-fe) !important;
+      }
+      .text-muted {
+        color: #888 !important;
+      }
+
+      .card {
+        background: rgba(20, 20, 20, 0.9);
+        border: 1px solid #333;
+        border-radius: 12px;
+        padding: 2rem;
+        margin: 1.5rem 0;
+      }
+
+      .card.highlight {
+        border-color: var(--accent);
+      }
+      .card.highlight-fe {
+        border-color: var(--accent-fe);
+      }
+
+      .reveal pre {
+        box-shadow: none;
+        width: 100%;
+      }
+
+      .reveal pre code {
+        padding: 1.5rem;
+        border-radius: 8px;
+        font-size: 0.5em;
+        line-height: 1.5;
+        max-height: 500px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        align-items: start;
+      }
+
+      .badge {
+        display: inline-block;
+        padding: 0.3em 0.8em;
+        border-radius: 20px;
+        font-size: 0.5em;
+        font-weight: bold;
+        margin-left: 0.5em;
+        vertical-align: middle;
+      }
+
+      .badge-be {
+        background: rgba(0, 255, 102, 0.2);
+        color: var(--accent);
+      }
+      .badge-fe {
+        background: rgba(97, 218, 251, 0.2);
+        color: var(--accent-fe);
+      }
+
+      .key-point {
+        font-size: 1.1em;
+        line-height: 1.8;
+        margin: 2rem 0;
+      }
+
+      .key-point strong {
+        color: var(--accent);
+        font-weight: 700;
+      }
+
+      ul {
+        line-height: 1.8;
+      }
+
+      ul li {
+        margin: 0.8rem 0;
+      }
+
+      table {
+        font-size: 0.7em;
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1rem 0;
+      }
+
+      table th,
+      table td {
+        padding: 0.8rem;
+        border: 1px solid #333;
+        text-align: left;
+      }
+
+      table th {
+        background: rgba(0, 255, 102, 0.1);
+        color: var(--accent);
+        font-weight: 700;
+      }
+
+      .comparison {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin: 2rem 0;
+      }
+
+      .comparison-item {
+        padding: 1.5rem;
+        border-radius: 8px;
+        background: rgba(30, 30, 30, 0.5);
+      }
+
+      .comparison-item.before {
+        border-left: 3px solid #ff4444;
+      }
+
+      .comparison-item.after {
+        border-left: 3px solid var(--accent);
+      }
+
+      .center-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <!-- 1. 인트로 -->
+        <section
+          data-background-gradient="linear-gradient(to bottom right, #000000, #112211)"
+        >
+          <h1 style="font-size: 3.5em; letter-spacing: -2px">
+            shor<span class="text-accent">T</span>udy
+            <span style="font-size: 0.4em; opacity: 0.5">2.0</span>
+          </h1>
+          <p class="text-muted" style="font-size: 1.2em; margin-top: 2em">
+            MVP에서 <span class="text-accent">프로덕션 레벨</span>로의 진화
+          </p>
+          <div style="margin-top: 3rem; font-size: 0.9em">
+            <span class="text-accent">Backend</span> +
+            <span class="text-accent-fe">Frontend</span> Full-Stack Review
+          </div>
+        </section>
+
+        <!-- 2. 핵심 개선사항 -->
+        <section>
+          <h2>핵심 개선사항</h2>
+          <div class="comparison">
+            <div class="comparison-item before">
+              <h3 style="color: #ff4444; font-size: 1em">Before</h3>
+              <ul style="font-size: 0.9em">
+                <li>서버 경유 업로드 → 부하 발생</li>
+                <li>부정확한 문자열 검색</li>
+                <li>전체 조회만 가능</li>
+                <li>N+1 쿼리 문제</li>
+              </ul>
+            </div>
+            <div class="comparison-item after">
+              <h3 class="text-accent" style="font-size: 1em">After</h3>
+              <ul style="font-size: 0.9em">
+                <li><strong>Presigned URL</strong> - 서버 부하 0%</li>
+                <li><strong>정규화 엔진</strong> - 검색 품질 향상</li>
+                <li><strong>카테고리 & 추천</strong> - 맞춤형 탐색</li>
+                <li><strong>Facade 패턴</strong> - 99% 쿼리 감소</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. 기술 스택 -->
+        <section>
+          <h2>기술 스택</h2>
+          <div class="grid">
+            <div class="card highlight-fe">
+              <h3 class="text-accent-fe" style="font-size: 1.2em">Frontend</h3>
+              <table style="font-size: 1em">
+                <tr>
+                  <th>프레임워크</th>
+                  <td>Next.js 16</td>
+                </tr>
+                <tr>
+                  <th>UI</th>
+                  <td>Shadcn/ui</td>
+                </tr>
+                <tr>
+                  <th>스타일링</th>
+                  <td>Tailwind CSS</td>
+                </tr>
+                <tr>
+                  <th>애니메이션</th>
+                  <td>Framer Motion</td>
+                </tr>
+                <tr>
+                  <th>언어</th>
+                  <td>TypeScript</td>
+                </tr>
+              </table>
+            </div>
+            <div class="card highlight">
+              <h3 class="text-accent" style="font-size: 1.2em">Backend</h3>
+              <table style="font-size: 1em">
+                <tr>
+                  <th>프레임워크</th>
+                  <td>Spring Boot</td>
+                </tr>
+
+                <tr>
+                  <th>DB</th>
+                  <td>MySQL + JPA</td>
+                </tr>
+                <tr>
+                  <th>캐싱</th>
+                  <td>Redis</td>
+                </tr>
+                <tr>
+                  <th>스토리지</th>
+                  <td>AWS S3</td>
+                </tr>
+                <tr>
+                  <th>추천</th>
+                  <td>Jaccard Similarity</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========== BACKEND 섹션 ========== -->
+        <section>
+          <section
+            data-background-gradient="linear-gradient(to right, #001100, #000000)"
+          >
+            <h1 class="text-accent">Backend</h1>
+            <p class="text-muted">확장 가능한 서버 아키텍처</p>
+          </section>
+
+          <!-- 검색 엔진 -->
+          <section>
+            <h2>1. 검색 엔진 <span class="badge badge-be">BE</span></h2>
+            <div class="key-point">
+              <strong>문제:</strong> "Java" vs "java" vs "JAVA " - 모두 다른
+              결과
+            </div>
+          </section>
+
+          <section>
+            <h3>해결: 정규화 파이프라인</h3>
+            <pre><code class="java" data-trim>
+private String joinKeywords(List&lt;String&gt; keywords) {
+    return keywords.stream()
+        .map(String::trim)          // 공백 제거
+        .map(String::toLowerCase)   // 소문자 변환
+        .distinct()                 // 중복 제거
+        .collect(Collectors.joining(","));
+}
+                    </code></pre>
+            <div class="card" style="margin-top: 2rem">
+              <p>
+                <strong>결과:</strong> 저장 시점에 정규화 → 검색 품질 100% 일치
+              </p>
+            </div>
+          </section>
+
+          <!-- 카테고리 -->
+          <section>
+            <h2>2. 카테고리 시스템 <span class="badge badge-be">BE</span></h2>
+            <div class="key-point">
+              <strong>목표:</strong> 관심사별 필터링을 위한 데이터 정합성 확보
+            </div>
+          </section>
+
+          <section>
+            <h3>데이터 무결성 보장</h3>
+            <pre><code class="java" data-trim>
+@Transactional
+public CategoryResponse createCategory(CategoryRequest request) {
+    // 관리자 권한 체크 (Security Context)
+    validateAdminRole();
+
+    // 중복 카테고리명 원천 차단
+    if (categoryRepository.existsByName(request.name())) {
+        throw new IllegalArgumentException("이미 존재하는 카테고리");
+    }
+    
+    return CategoryResponse.of(
+        categoryRepository.save(new Category(request.name()))
+    );
+}
+                    </code></pre>
+            <div class="card" style="margin-top: 2rem">
+              <p>
+                <strong>핵심:</strong> 관리자 중심의 데이터 관리 + Unique
+                Constraint
+              </p>
+            </div>
+          </section>
+
+          <!-- 추천 시스템 -->
+          <section>
+            <h2>3. 추천 시스템 <span class="badge badge-be">BE</span></h2>
+            <div class="key-point">
+              <strong>알고리즘:</strong> Jaccard Similarity - 태그 기반 유사도
+              계산
+            </div>
+            <div class="card" style="text-align: center; margin-top: 2rem">
+              <div style="font-size: 1.5em; font-family: serif">
+                J(A,B) = <span class="text-accent">|A ∩ B|</span> / |A ∪ B|
+              </div>
+              <p style="margin-top: 1rem; opacity: 0.7">
+                교집합 크기 / 합집합 크기
+              </p>
+            </div>
+          </section>
+
+          <section>
+            <h3>구현 코드</h3>
+            <pre><code class="java" data-trim>
+public RecommendationResponse getRecommendations(Long shortsId) {
+    Set&lt;String&gt; baseKeywords = extractKeywords(baseShorts);
+
+    return candidates.stream()
+        .map(c -> {
+            Set&lt;String&gt; target = extractKeywords(c);
+            double score = calculateJaccard(baseKeywords, target);
+            return new SimilarityResult(c.getId(), score);
+        })
+        .filter(r -> r.similarity > 0)
+        .sorted(desc())
+        .collect(toList());
+}
+                    </code></pre>
+          </section>
+
+          <!-- 업로드 아키텍처 -->
+          <section>
+            <h2>4. 업로드 아키텍처 <span class="badge badge-be">BE</span></h2>
+            <div class="key-point">
+              <strong>핵심:</strong> 서버는 권한만 부여, 클라이언트가 S3 직접
+              업로드
+            </div>
+          </section>
+
+          <section>
+            <h3>3단계 프로세스</h3>
+            <div class="card">
+              <div style="font-size: 0.9em; line-height: 2">
+                <strong>1단계:</strong> 서버가 Presigned URL 발급 (메타데이터
+                검증)<br />
+                <strong>2단계:</strong> 클라이언트가 S3에 직접 PUT (서버 부하
+                0%)<br />
+                <strong>3단계:</strong> 서버가 파일 존재 확인 후 DB 상태 변경
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h3>1단계: 초기화</h3>
+            <pre><code class="java" data-trim>
+@Transactional
+public ShortsUploadInitResponse init(Long userId, Req body) {
+    validateFile(body.fileName(), body.fileSize());
+    
+    // DRAFT 상태로 생성
+    Shorts shorts = new Shorts(..., ShortsStatus.DRAFT);
+    shortsRepository.save(shorts);
+
+    // Presigned URL 생성 (1시간 유효)
+    PresignedPutObjectRequest presigned = presigner
+        .presignPutObject(r -> r.signatureDuration(...));
+                                
+    return new Response(presigned.url().toString(), ...);
+}
+                    </code></pre>
+          </section>
+
+          <section>
+            <h3>3단계: 완료 처리</h3>
+            <pre><code class="java" data-trim>
+@Transactional
+public void complete(Long shortId, Long userId, Req req) {
+    validateSession(session, req.uploadId(), userId);
+
+    // 서버 규칙대로 URL 재생성 (보안)
+    String videoUrl = generateS3Url("shorts", shortId, "mp4");
+
+    // 공개 전환
+    shorts.updateShorts(..., ShortsStatus.PUBLISHED);
+    session.markUploaded();
+}
+                    </code></pre>
+          </section>
+
+          <!-- 조회수 시스템 -->
+          <section>
+            <h2>5. 조회수 집계 <span class="badge badge-be">BE</span></h2>
+            <div class="key-point">
+              <strong>전략:</strong> Redis Write-Back - 메모리에서 집계 후 일괄
+              DB 저장
+            </div>
+          </section>
+
+          <section>
+            <h3>자료구조 선정</h3>
+            <div class="card">
+              <h4 class="text-accent" style="font-size: 1em">
+                1. 중복 방지 (String)
+              </h4>
+              <pre
+                style="margin: 1rem 0"
+              ><code>SETNX shorts:view:unique:{vid}:{uid} 1
+EXPIRE 24h</code></pre>
+              <p style="font-size: 0.8em; opacity: 0.7">
+                사용자별 개별 TTL 설정 가능
+              </p>
+            </div>
+            <div class="card" style="margin-top: 1rem">
+              <h4 class="text-accent" style="font-size: 1em">
+                2. 동기화 큐 (Set)
+              </h4>
+              <pre
+                style="margin: 1rem 0"
+              ><code>SADD shorts:view:pending {vid}</code></pre>
+              <p style="font-size: 0.8em; opacity: 0.7">
+                중복 ID 자동 제거, 일괄 DB 업데이트
+              </p>
+            </div>
+          </section>
+
+          <!-- 상호작용 -->
+          <section>
+            <h2>6. 상호작용 시스템 <span class="badge badge-be">BE</span></h2>
+            <div class="key-point">
+              <strong>좋아요:</strong> DB Unique Constraint로 중복 원천 차단<br />
+              <strong>댓글:</strong> Self Reference로 계층형 구조 구현
+            </div>
+          </section>
+
+          <section>
+            <h3>좋아요: 정합성 우선</h3>
+            <pre><code class="java" data-trim>
+@Table(
+    name = "shorts_like",
+    uniqueConstraints = @UniqueConstraint(
+        columnNames = {"user_id", "shorts_id"}
+    )
+)
+public class ShortsLike { ... }
+                    </code></pre>
+            <div class="card" style="margin-top: 2rem">
+              <p>
+                <strong>이유:</strong> Redis는 빠르지만 유실 가능 → DB 레벨 보장
+              </p>
+            </div>
+          </section>
+
+          <section>
+            <h3>댓글: 계층형 구조</h3>
+            <pre><code class="java" data-trim>
+@Entity
+public class Comment {
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "parent_id")
+    private Comment parent;  // Self Reference
+
+    @OneToMany(mappedBy = "parent")
+    private List&lt;Comment&gt; children = new ArrayList<>();
+
+    public static Comment reply(User user, Comment parent, String content) {
+        return new Comment(user, parent.getShorts(), parent, content);
+    }
+}
+                    </code></pre>
+          </section>
+
+          <!-- Facade 패턴 -->
+          <section>
+            <h2>7. 조회 최적화 <span class="badge badge-be">BE</span></h2>
+            <div class="key-point">
+              <strong>Facade 패턴:</strong> 복잡한 의존성 격리 & 트랜잭션 단위
+              최적화
+            </div>
+          </section>
+
+          <section>
+            <h3>ShortsQueryFacade 구현</h3>
+            <pre><code class="java" data-trim>
+@Transactional(readOnly = true)
+public ShortsResponse getShortsDetails(Long shortsId, Long userId) {
+    // 1. 핵심 데이터 조회
+    Shorts shorts = shortsService.findShortsWithDetails(shortsId);
+    
+    // 2. 부가 데이터 병렬/개별 조회 (댓글, 좋아요 등)
+    long commentCount = commentCountProvider.commentCount(shortsId);
+    boolean isLiked = (userId != null) && 
+        shortsLikeRepository.existsByUserIdAndShortsId(userId, shortsId);
+    
+    // 3. Redis 실시간 조회수 보정 (Write-Back 반영)
+    long realTimeViewCount = calculateRealTimeViewCount(shorts, shortsId);
+
+    // 4. 단일 응답 객체 조립
+    return ShortsResponse.of(shorts, commentCount, realTimeViewCount, isLiked);
+}
+                    </code></pre>
+            <div class="card" style="margin-top: 2rem">
+              <p>
+                <strong>효과:</strong> 서비스 계층의 순환 참조 방지 및 조회 로직
+                중앙화
+              </p>
+            </div>
+          </section>
+        </section>
+
+        <!-- ========== INFRASTRUCTURE 섹션 ========== -->
+        <section>
+          <section
+            data-background-gradient="linear-gradient(to right, #220000, #000000)"
+          >
+            <h1 style="color: #ffaa00">Infrastructure</h1>
+            <p class="text-muted">안정적인 서비스 운영 환경</p>
+          </section>
+
+          <!-- 아키텍처 개요 -->
+          <section>
+            <h2>인프라 아키텍처</h2>
+            <div class="card">
+              <ul style="font-size: 0.9em">
+                <li>
+                  <strong>Compute:</strong> AWS EC2 + Docker (컨테이너 기반
+                  배포)
+                </li>
+                <li>
+                  <strong>Processing:</strong> AWS Lambda (영상 처리 별도 분리)
+                </li>
+                <li>
+                  <strong>Storage:</strong> AWS S3 (영상/썸네일 원본 저장)
+                </li>
+                <li>
+                  <strong>Database:</strong> MySQL (RDB) + Redis (Cache/Session)
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- AWS Lambda 도입 -->
+          <section>
+            <h2>Serverless 썸네일 처리</h2>
+            <div class="key-point">
+              <strong>Why Lambda?</strong><br />
+              EC2에서 FFmpeg 실행 시 CPU/메모리 점유율 급증<br />
+              → <strong>업로드 이벤트 트리거</strong>로 분리하여 서버 부하 0%
+              달성
+            </div>
+          </section>
+
+          <section>
+            <h3>처리 프로세스</h3>
+            <div class="grid">
+              <div class="card">
+                <h4 style="color: #ffaa00; font-size: 0.9em">Flow</h4>
+                <ol style="font-size: 0.8em; margin-left: 1rem">
+                  <li>User가 S3에 영상 업로드 (Presigned URL)</li>
+                  <li>S3 Put Event가 Lambda 트리거</li>
+                  <li>Lambda가 첫 프레임 추출 → 썸네일 S3 저장</li>
+                  <li>서버는 약속된 경로로 썸네일 URL 접근</li>
+                </ol>
+              </div>
+              <div class="card">
+                <h4 style="color: #ffaa00; font-size: 0.9em">Benefit</h4>
+                <ul style="font-size: 0.8em">
+                  <li>메인 서버 리소스 보호</li>
+                  <li>병렬 업로드 시 확장성 보장</li>
+                  <li>실패 시 재시도 로직 분리 용이</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+        </section>
+
+        <!-- ========== FRONTEND 섹션 ========== -->
+        <section>
+          <section
+            data-background-gradient="linear-gradient(to right, #001a33, #000000)"
+          >
+            <h1 class="text-accent-fe">Frontend</h1>
+            <p class="text-muted">백엔드 API 연결 -> 기능 개발 및 개선</p>
+          </section>
+
+          <!-- Framer Motion -->
+          <section>
+            <h2>1. Framer Motion <span class="badge badge-fe">FE</span></h2>
+            <div class="comparison">
+              <div class="comparison-item before">
+                <h4 style="color: #888">이전 차수</h4>
+                <ul style="font-size: 0.9em">
+                  <li>기본 애니메이션</li>
+                  <li>단순 전환 효과</li>
+                </ul>
+              </div>
+              <div class="comparison-item after">
+                <h4 class="text-accent-fe">4차 개선</h4>
+                <ul style="font-size: 0.9em">
+                  <li>세밀한 인터랙션 UX</li>
+                  <li>행동 기반 피드백</li>
+                  <li>스크롤 인터랙션</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- Parallel Routes -->
+          <section>
+            <h2>2. Parallel Routes <span class="badge badge-fe">FE</span></h2>
+            <div class="key-point">
+              <strong>목적:</strong> 하나의 URL에 여러개의 UI를 구현
+            </div>
+          </section>
+
+          <section>
+            <h3>구현 방식</h3>
+            <div
+              style="
+                display: flex;
+                gap: 5px;
+                align-items: center;
+                justify-content: center;
+              "
+            >
+              <img
+                style="border-radius: 10px; width: 400px"
+                src="data:image/png;base64,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"
+                alt="스크린샷 2026-01-18 174914.png"
+              />
+              <pre
+                style="width: 300px; margin: 0"
+              ><code class="jsx" data-trim style="height: 290px">
+// app/fullscreen/layout.tsx
+export default function FullscreenLayout({
+  children,    // 메인 콘텐츠
+  comments,    // @comments 슬롯
+  playlist,    // @playlist 슬롯
+}) {
+  return (
+    &lt;&gt;
+      &lt;Header /&gt;
+      &lt;main&gt;
+        {children}
+        {comments}   {/* 독립적인 라우트 */}
+        {playlist}   {/* 독립적인 라우트 */}
+      &lt;/main&gt;
+    &lt;/&gt;
+  )
+}
+                    </code></pre>
+            </div>
+            <div class="card" style="margin-top: 2rem">
+              <p><strong>장점:</strong> URL 기반 상태 관리 + 개발 편의성</p>
+            </div>
+          </section>
+
+          <!-- MVP 기능 -->
+          <section>
+            <h2>3. 주요 기능 <span class="badge badge-fe">FE</span></h2>
+            <div class="card">
+              <ul style="font-size: 0.9em; line-height: 2">
+                <li><strong>마이페이지:</strong> 내가 제작한 숏츠 목록</li>
+                <li>
+                  <strong>숏츠 CRUD:</strong> 등록/수정/삭제 + S3 직접 업로드
+                </li>
+                <li>
+                  <strong>인터랙션:</strong> 좋아요, 댓글/대댓글, 모달
+                  애니메이션
+                </li>
+                <li><strong>탐색:</strong> 카테고리별 필터링</li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- Props Drilling -->
+          <section><h2>4. 시연</h2></section>
+          <section>
+            <h2>
+              5. Props Drilling 이슈 <span class="badge badge-fe">FE</span>
+            </h2>
+            <div class="key-point">
+              <strong>문제:</strong> 무분별한 컴포넌트 분리 -> 3단계 이상 Props
+              전달로 유지보수성 저하
+            </div>
+            <div>
+              최상위 페이지 :
+              <span style="font-weight: bold">page.tsx (id)</span> - (유저데이터
+              생성)<br />
+              ↓<br />
+              컨테이너 :
+              <span style="font-weight: bold">Container</span> (id)<br />
+              ↓<br />
+              컴포넌트 :
+              <span style="font-weight: bold">Component</span> (id)<br />
+              ↓<br />
+              * 하위 컴포넌트 :<span style="font-weight: bold"
+                >SubComponent (id)</span
+              >
+              - (유저데이터 필요)
+            </div>
+          </section>
+
+          <section>
+            <h3>개선 방향</h3>
+            <div class="card">
+              <h4 class="text-accent-fe" style="font-size: 1em">
+                5차 프로젝트 적용 예정
+              </h4>
+              <ul style="font-size: 0.9em; margin-top: 1rem">
+                <li>
+                  <strong>Zustand 도입:</strong> 전역 상태 관리로 Props 전달
+                  최소화
+                </li>
+
+                <li>
+                  <strong>설계 개선:</strong> 데이터 의존성 깊이 사전 분석
+                </li>
+                <li>리팩토링: 설계 방향성에 맞게 코드 리팩토링 예정</li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- S3 업로드 -->
+          <section>
+            <h2>6. S3 직접 업로드 <span class="badge badge-fe">FE</span></h2>
+            <div class="key-point">
+              <strong>배경:</strong> Server Action Body Size 제한(1MB) 극복 필요
+            </div>
+          </section>
+
+          <section>
+            <h3>해결</h3>
+            <h3>업로드 플로우</h3>
+            <div class="card">
+              <div style="font-size: 0.9em; line-height: 2">
+                <strong>1.</strong> Server Action에 메타데이터만 전송<br />
+                <strong>2.</strong> Backend API에서 Presigned URL 수령<br />
+                <strong>3.</strong> 클라이언트에서 S3서버로 직접 PUT 요청<br />
+                <strong>4.</strong> 완료 알림 → Backend가 DB 업데이트
+              </div>
+            </div>
+            <div class="card" style="margin-top: 1.5rem">
+              <p><strong>결과:</strong> 대용량 파일 업로드 시 서버 부하 제로</p>
+            </div>
+          </section>
+        </section>
+
+        <!-- ========== 회고 및 로드맵 ========== -->
+        <section>
+          <section
+            data-background-gradient="linear-gradient(to bottom, #1a1a2e, #000000)"
+          >
+            <h1 style="color: #a3a3ff">Retrospective & Roadmap</h1>
+            <p class="text-muted">협업 과정의 배움과 미래</p>
+          </section>
+
+          <!-- 협업 회고 -->
+          <section>
+            <h2>협업 회고 (Collaboration)</h2>
+            <div class="grid">
+              <div class="card" style="border-color: #ff4444">
+                <h3 style="color: #ff4444; font-size: 1em">
+                  Problem & Solution
+                </h3>
+                <ul style="font-size: 0.75em">
+                  <li>
+                    <strong>API 명세 불일치:</strong> 잦은 수정으로 FE/BE
+                    충돌<br />
+                    →
+                    <span style="color: #fff"
+                      >변경 시 즉각 알림, 명세서(Swagger) 최신화 엄수</span
+                    >
+                  </li>
+                  <li>
+                    <strong>배포 환경 디버깅:</strong> EC2 배포 후 에러 원인
+                    파악 난해<br />
+                    →
+                    <span style="color: #fff"
+                      >모니터링 툴 도입 필요성 체감</span
+                    >
+                  </li>
+                  <li>
+                    <strong>싱크 이슈:</strong> 각자 다른 방향으로 개발 진행<br />
+                    →
+                    <span style="color: #fff">배포 후 동기화 미팅 정례화</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="card" style="border-color: #00ff66">
+                <h3 style="color: #00ff66; font-size: 1em">Good Points</h3>
+                <ul style="font-size: 0.75em">
+                  <li>
+                    <strong>세분화된 에러 코드:</strong><br />BE/FE 모두 디버깅
+                    속도 200% 향상
+                  </li>
+                  <li>
+                    <strong>상호 배려 & 소통:</strong><br />무리한 요구 지양,
+                    실시간 피드백 루프 형성
+                  </li>
+                  <li>
+                    <strong>신속한 이슈 대응:</strong><br />문제 발생 시 책임
+                    전가보다 해결 우선
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- 로드맵 -->
+          <section>
+            <h2>Future Roadmap</h2>
+            <div class="card">
+              <h3 class="text-accent" style="font-size: 1.2em">
+                Shortudy 3.0 (MVP3)
+              </h3>
+              <div
+                style="text-align: left; margin-top: 1.5rem; font-size: 0.9em"
+              >
+                <p style="margin-bottom: 1rem">
+                  <strong>1. 추천 알고리즘 고도화:</strong><br />
+                  현재 Jaccard 단순 유사도 →
+                  <span class="text-accent"
+                    >User Behavior 기반 하이브리드 추천</span
+                  >
+                </p>
+                <p style="margin-bottom: 1rem">
+                  <strong>2. Vision Draft 실현:</strong><br />
+                  숏폼 기반
+                  <span class="text-accent"
+                    >LXP(Learning Experience Platform)</span
+                  >로의 진화<br />
+                  <span style="font-size: 0.8em; color: #aaa"
+                    >- AI 에이전트 도입: 맞춤형 큐레이션 및 학습 코칭</span
+                  >
+                </p>
+              </div>
+            </div>
+          </section>
+        </section>
+
+        <!-- Closing -->
+        <section
+          data-background-gradient="linear-gradient(to top left, #000000, #112211)"
+        >
+          <h1>감사합니다</h1>
+          <p class="text-accent" style="font-size: 1.5em; margin-top: 2rem">
+            Q & A
+          </p>
+          <div style="margin-top: 3rem; font-size: 0.9em">
+            <span class="text-accent-fe">Frontend</span> +
+            <span class="text-accent">Backend</span> Team
+          </div>
+          <div style="margin-top: 1rem; font-size: 0.7em; opacity: 0.5">
+            Shortudy 2.0 Full-Stack Technical Review
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/highlight/highlight.js"></script>
+    <script>
+      try {
+        Reveal.initialize({
+          width: 1200,
+          height: 900,
+          margin: 0.04,
+          minScale: 0.2,
+          maxScale: 2.0,
+          controls: true,
+          controlsTutorial: false,
+          progress: true,
+          center: true,
+          hash: false,
+          slideNumber: true,
+          transition: "slide",
+          backgroundTransition: "fade",
+          plugins: [RevealHighlight],
+          keyboard: {
+            37: "prev",
+            39: "next",
+            38: "prev",
+            40: "next",
+          },
+        });
+      } catch (e) {
+        console.log("Reveal initialization:", e);
+      }
+    </script>
+  </body>
+</html>
