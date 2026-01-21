@@ -2,7 +2,7 @@
 
 <br>
 
-![image.png](images\shortudy_v2.png)
+![image.png](/blog/04_Projects/04_lxp-35FUND/images/shortudy_v2.png)
 
 <br>
 
@@ -15,7 +15,7 @@
 사용자가 콘텐츠를 소비하는 것을 넘어 **직접 생산하고 관리할 수 있는 기능**을 구현해야 했다.
 
 이 과정에서 마주한 가장 큰 기술적 도전은 **파일 업로드**였다.
-Server Action의 1MB Body 제한이라는 현실적인 벽 앞에서,
+Server Action의 1MB Body 제한이라는 이슈에 부딪히며,
 우리는 S3 Presigned URL이라는 새로운 아키텍처를 학습하고 적용해야 했다.
 
 **기술적 한계를 인식하고, 그것을 우회하는 것이 아니라 더 나은 방식으로 해결하는 과정.**

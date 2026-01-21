@@ -63,4 +63,7 @@ UI/UX 디자인과 프론트엔드 공부 내용을 정리하는 공간입니다
 - [포텐업 LXP 프로젝트 - 3차 TypeScript, Next.js](./04_Projects/03_lxp-35FUND/lxp-shortudy.md)  
   → 2차 React 프로젝트를 TypeScript·Next.js로 마이그레이션하며 백엔드 연동까지 확장한 프로젝트
 
-## <br>
+- [포텐업 LXP 프로젝트 - 4차 TypeScript, Next.js](./04_Projects/04_lxp-35FUND/lxp-shortudy.md)  
+  → 숏츠 등록/수정/삭제 기능과 마이페이지를 추가하며 MVP에서 완성형 서비스로 발전시킨 프로젝트
+
+<br>
