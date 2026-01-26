@@ -2,7 +2,7 @@
 
 <br>
 
-![image.png](/blog/04_Projects/04_lxp-35FUND/images/shortudy_v2.png)
+![image.png](./images/shortudy_v2.png)
 
 <br>
 
